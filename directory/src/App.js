@@ -1,7 +1,15 @@
+import React from "react";
 import "./App.css";
+import Navbar from "./components/navbar/navbar";
+import Container from "./components/container/container";
 
-function App() {
-  return <div className="App"></div>;
-}
+const App = () => {
+  return (
+    <div className="App">
+      <Navbar />
+      <Container />
+    </div>
+  );
+};
 
 export default App;
