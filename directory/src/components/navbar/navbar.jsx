@@ -1,5 +1,8 @@
-import React, { Component } from "react";
+//import React, { Component } from "react";
+import "./style.scss";
 
-export default function Navbar() {
-  return <div></div>;
+function Navbar() {
+  return <header className="navbar">Employee Directory</header>;
 }
+
+export default Navbar;
