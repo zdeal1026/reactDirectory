@@ -15,6 +15,18 @@ class EmployeesContainer extends Component {
       phone: "",
       email: "",
     };
+  }  
+
+  //loading users when component mounts
+  componentDidMount() {
+    Api.getEmployees()
+    .then((res) =>
+    this.setState({
+      employees: res.data.results,
+      filteredEmployees: res.data.results,
+    })
+    )
+    .catch((err) => console.log(err));
   }
 
   return <div></div>;
