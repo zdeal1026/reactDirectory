@@ -1,32 +1,33 @@
 import React, { Component } from "react";
 import Api from "../../utils/Api";
-import Directory from "../directory/directory"
+import Directory from "../directory/directory";
+import Search from "../search/search";
 
 class EmployeesContainer extends Component {
   state = {
     employees: [],
     filteredEmployees: [],
-    search:""
+    search: "",
   };
 
   get initialSort() {
-    return{
+    return {
       name: "",
       phone: "",
       email: "",
     };
-  }  
+  }
 
   //loading users when component mounts
   componentDidMount() {
     Api.getEmployees()
-    .then((res) =>
-    this.setState({
-      employees: res.data.results,
-      filteredEmployees: res.data.results,
-    })
-    )
-    .catch((err) => console.log(err));
+      .then((res) =>
+        this.setState({
+          employees: res.data.results,
+          filteredEmployees: res.data.results,
+        })
+      )
+      .catch((err) => console.log(err));
   }
 
   //search filter by name
@@ -75,5 +76,46 @@ class EmployeesContainer extends Component {
     }
   };
 
-  return <div></div>;
+  filterEmployees = (input) => {
+    if (input) {
+      this.setState({
+        filteredEmployees: this.state.employees.filter((employee) => {
+          return (
+            employee.name.first
+              .toLowerCase()
+              .concat(" ", employee.name.last.toLowerCase())
+              .includes(input) ||
+            employee.phone.includes(input) ||
+            employee.phone.replace(/[^\w\s]/gi, "").includes(input) ||
+            employee.email.includes(input) ||
+            this.formatDate(employee.dob.date).includes(input)
+          );
+        }),
+      });
+    } else {
+      this.setState({ filteredEmployees: this.state.employees });
+    }
+  };
+
+  render() {
+    return (
+      <>
+        <Search
+          value={this.state.search}
+          handleInputChange={this.handleInputChange}
+          handleFormSubmit={this.handleFormSubmit}
+        />
+        <div className="container mt-4">
+          <Directory
+            state={this.state}
+            sortBy={this.sortBy}
+            filterEmployees={this.filterEmployees}
+            formatDate={this.formatDate}
+          />
+        </div>
+      </>
+    );
+  }
 }
+
+export default EmployeesContainer;
