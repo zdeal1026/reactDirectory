@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import SearchBar from "../SearchBar";
-import EmployeeTable from "../EmployeeTable";
-import API from "../../utils/API";
+import Search from "../search/search";
+import Directory from "../directory/directory";
+import API from "../../utils/Api";
 
-class EmployeesContainer extends Component {
+class Container extends Component {
   state = {
     search: "",
     employees: [],
@@ -117,13 +117,13 @@ class EmployeesContainer extends Component {
   render() {
     return (
       <>
-        <SearchBar
+        <Search
           value={this.state.search}
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}
         />
         <div className="container mt-4">
-          <EmployeeTable
+          <Directory
             state={this.state}
             sortBy={this.sortBy}
             filterEmployees={this.filterEmployees}
@@ -135,4 +135,4 @@ class EmployeesContainer extends Component {
   }
 }
 
-export default EmployeesContainer;
+export default Container;

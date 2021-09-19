@@ -1,16 +1,16 @@
 import React from "react";
 import "./style.scss";
 
-const Header = () => {
+const Navbar = () => {
   return (
-    <header>
+    <Navbar>
       <h1 className="text-center">Employee Directory</h1>
       <p className="text-center">
-        Click on column headers to filter by heading or use the search box to
+        Click on column Navbars to filter by heading or use the search box to
         narrow your results.
       </p>
-    </header>
+    </Navbar>
   );
 };
 
-export default Header;
+export default Navbar;

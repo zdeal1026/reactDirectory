@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 
-const EmployeeTable = (props) => {
+const Directory = (props) => {
   return (
     <table className="table table-striped table-sortable text-center">
       <thead>
@@ -52,4 +52,4 @@ const EmployeeTable = (props) => {
   );
 };
 
-export default EmployeeTable;
+export default Directory;
