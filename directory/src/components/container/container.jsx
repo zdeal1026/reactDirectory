@@ -29,5 +29,16 @@ class EmployeesContainer extends Component {
     .catch((err) => console.log(err));
   }
 
+  //search filter by name
+  handleInputChange = (event) => {
+    const value = event.target.value;
+    this.setState({ search: value });
+    this.filterEmployees(value.toLowerCase().trim());
+  };
+
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return <div></div>;
 }
