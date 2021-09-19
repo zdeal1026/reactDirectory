@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Api from "../../utils/Api";
-import Directory from "../directory/directory";
-import Search from "../search/search";
+import SearchBar from "../SearchBar";
+import EmployeeTable from "../EmployeeTable";
+import API from "../../utils/API";
 
 class EmployeesContainer extends Component {
   state = {
@@ -22,7 +22,7 @@ class EmployeesContainer extends Component {
 
   // When this component mounts, load random users as employees from https://randomuser.me/
   componentDidMount() {
-    Api.getEmployees()
+    API.getEmployees()
       .then((res) =>
         this.setState({
           employees: res.data.results,
@@ -117,13 +117,13 @@ class EmployeesContainer extends Component {
   render() {
     return (
       <>
-        <Search
+        <SearchBar
           value={this.state.search}
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}
         />
         <div className="container mt-4">
-          <Directory
+          <EmployeeTable
             state={this.state}
             sortBy={this.sortBy}
             filterEmployees={this.filterEmployees}

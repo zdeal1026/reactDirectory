@@ -1,7 +1,7 @@
 import React from "react";
-import "./style.scss";
+import "./style.css";
 
-const Search = (props) => {
+const SearchBar = (props) => {
   // Setting the component's initial state
 
   return (
@@ -20,4 +20,4 @@ const Search = (props) => {
   );
 };
 
-export default Search;
+export default SearchBar;
