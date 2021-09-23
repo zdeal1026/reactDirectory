@@ -22,11 +22,15 @@
 
 ## Description
 
+This was a application built with react. You can use this application to get employee information, you can also search for the name or email of a particular employee.
+
 ## Installation
 
-To use this application, you must install your node modules along with express, mongoose, morgan, and compression. After the dependencies are installed you can run the application by using the "node server.js" command.
+To use this application, you must first create a react application (npx create-react-app) and then install the dependencies (npm i axios bootstrap react-dom).
 
 ## Usage
+
+This application was used to learn how to use axios.
 
 ## License
 
@@ -46,5 +50,5 @@ email jedimastershake@gmail.com
 
 ## Links
 
-deployed application on gh pages
-github repo
+deployed application on gh pages https://zdeal1026.github.io/reactDirectory/
+github repo https://github.com/zdeal1026/reactDirectory
