@@ -22,12 +22,12 @@ const Employees = (props) => {
         <img alt={props.firstName} src={props.icon} />
       </td>
       <td>
-        {props.firstName} {props.lastName}
+        {props.lastName} {props.firstName}
       </td>
-      <td>{props.email}</td>
       <td>{props.phone} </td>
       <td>{dob}</td>
       <td>{props.address}</td>
+      <td>{props.email}</td>
     </tr>
   );
 };
