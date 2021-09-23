@@ -1,12 +1,11 @@
 import React from "react";
-import Navbar from "./components/navbar/navbar";
-import Container from "./components/container/container";
+import Directory from "./components/directory.js";
+import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <Navbar />
-      <Container />
+      <Directory />
     </div>
   );
 };
