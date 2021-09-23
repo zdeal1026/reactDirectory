@@ -12,8 +12,6 @@ class Directory extends Component {
     sorted: false,
   };
 
-  // check that the component rendered at least once, and pull in our data
-  // wait for the information to come back
   componentDidMount = () => {
     API.getUsers().then((results) => {
       this.setState({
@@ -22,8 +20,6 @@ class Directory extends Component {
     });
   };
 
-  // sort through employees based on search term
-  // check if there is a match and set that to empSort for rendering
   sortEmployees = () => {
     let { employees, search } = this.state;
     let empSort = employees.filter((sorted) => {

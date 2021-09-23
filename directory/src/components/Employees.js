@@ -1,8 +1,6 @@
 import React from "react";
 
 const Employees = (props) => {
-  // The API response of dates looks like: 1972-08-30T05:36:46.599Z
-  // That's difficult to read, so formatDate sets up dates as ??-??-???? in Month-Day-Year format.
   function formatDate(date) {
     const dateArray = date.split("-");
     const year = dateArray[0];
@@ -13,7 +11,6 @@ const Employees = (props) => {
     return formattedDate;
   }
 
-  // dob variable allows me to cleanly call formatDate on the props in the below JSX
   let dob = formatDate(props.dob);
 
   return (
