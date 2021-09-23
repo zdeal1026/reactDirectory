@@ -55,10 +55,10 @@ class Directory extends Component {
               <tr>
                 <th>Image</th>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
                 <th>Date of Birth</th>
+                <th>Phone</th>
                 <th>Address</th>
+                <th>Email</th>
               </tr>
             </thead>
             <tbody>

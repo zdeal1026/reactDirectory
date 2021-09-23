@@ -21,8 +21,8 @@ const Employees = (props) => {
       <td>
         {props.lastName} {props.firstName}
       </td>
-      <td>{props.phone} </td>
       <td>{dob}</td>
+      <td>{props.phone} </td>
       <td>{props.address}</td>
       <td>{props.email}</td>
     </tr>
