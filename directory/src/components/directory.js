@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Employees from "./Employees.js";
 import Search from "./search.js";
 import API from "../utils/API";
-import "../styles/style.css";
 
 class Directory extends Component {
   state = {
@@ -13,7 +12,7 @@ class Directory extends Component {
   };
 
   componentDidMount = () => {
-    API.getUsers().then((results) => {
+    API.getEmployees().then((results) => {
       this.setState({
         employees: results.data.results,
       });
